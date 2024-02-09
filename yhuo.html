@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>除夕快乐2</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  }
+  body{
+    background-color: black;
+  }
+.a{
+width: 100%;
+   position:absolute;
+   top:50%;
+   left:50%;
+   transform: translate(-50%, -50%);
+  }
+  .a img{
+    width: 100%;
+    height: 303px;
+  }
+.pp{
+  position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #fff;
+    animation: move 3s ease 1 forwards;
+  }
+
+@keyframes move {
+  0%{
+      transform: scale(0); 
+      
+    }
+  100%{
+   
+     transform: scale(1.5); 
+    }
+  }
+  .c{
+    z-index: 9;
+    width: 100%;
+    position: absolute;
+    top: 75%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+  #sp{
+    color: #fff;
+    font-size: 20px;
+
+  }
+  #sp ::after{
+    content: "🧧";
+  }
+  .d{
+    position: absolute;
+    top: 95%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+  }
+  .d .but {  
+    display: none;
+  width: 109px;  
+  height: 46px;  
+  border-radius: 8px;  
+  background-color: #fff;  
+  position: relative; /* 确保伪元素可以相对于此元素定位 */  
+}  
+.d .but:hover {  
+  background-color: #b50000; /* 悬停时改变背景色 */  
+}
+a{
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+  <div class="a">
+    <img class="box" src="./yh.gif"/> 
+  </div>
+
+
+  <p class="pp">xxxx</p>
+
+  <div class="c">
+    <h1 id="sp"></h1>
+  </div>
+ 
+  <div class="d">
+   <a href="a.html"><button class="but">前往下一个页面</button></a>
+  </div>
+<script>
+  let userInput = prompt("请输入你的名字:"); 
+  let pp =document.querySelector(".pp")
+  pp.innerHTML=`${userInput}`
+const span = document.getElementById("sp");  
+let text = `尊敬的${userInput}老师，除夕之夜，愿您和家人欢乐满堂，新的一年事事顺心，桃李满天下，春晖遍四方。`;
+let i = 0;  
+let time = setInterval(function() {    
+  span.innerHTML += text[i];    
+  if (i === text.length - 1) {    
+    clearInterval(time);
+  }  
+  i++; 
+}, 100); 
+document.addEventListener('DOMContentLoaded', function() {  
+  const btn = document.querySelector(".but");  
+  setTimeout(function() {  
+    btn.style.display = "block";  
+  }, 5500);  
+});
+</script>
+</body>
+</html>

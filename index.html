@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>除夕快乐</title>
+    <style>
+        .shuzi {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            font-size: 60px;
+            opacity: 1;
+        }
+        progress {
+            width: 200px;
+            height: 30px;
+            border: 1px solid #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        #bfb{
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="shuzi"></h3>
+    <progress id="jdt" value="0" max="100"></progress>   
+    <div id="bfb">0%</div>
+    <script>
+        const shuzi = document.querySelector('.shuzi');
+        let shuzu = [3, 2, 1];
+        let i = 0;
+
+        let timezhuzi = setInterval(function() {
+            if (i < shuzu.length) {
+                shuzi.innerHTML = shuzu[i];
+                i++;
+            } else {
+                shuzi.style.opacity=0;
+                clearInterval(timezhuzi);
+            }
+        }, 1000); 
+      
+      
+        document.addEventListener('DOMContentLoaded', function() {  
+
+            function startjdt() {  
+                const jdt = document.querySelector("#jdt"); 
+                const bfb = document.querySelector("#bfb"); 
+                let i = 0;  
+                jdt.style.opacity=1;
+                bfb.style.opacity=1;
+                const progressInterval = setInterval(() => {  
+                    if (i >= 100) {  
+                        clearInterval(progressInterval);  
+                        window.location.href = "./yhuo.html"; 
+                    } else { 
+                         
+                        jdt.value = i; 
+                        bfb.textContent = i + "%"; 
+                        i++; 
+                    }  
+                }, 80); s's
+            }  
+
+            setTimeout(startjdt, 5000);  
+        });  
+    </script>
+</body>
+</html>

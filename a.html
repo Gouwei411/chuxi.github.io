@@ -1,0 +1,47 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>qiang红包</title>
+    <style>
+
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+        }
+        p{
+            font-size: 30px;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>  
+</head>  
+<body>  
+
+        <img src="./OIP-C.png" onclick="i++" alt="">
+
+        <p>快速点击红包</p>
+    <script>  
+    alert("最后一个页面做的是一个小游戏")
+    alert("点击图片测试手速")
+    alert("确认后3秒开始")
+    let i = 0
+    let time =  setTimeout(()=>{
+        alert("你一共抢到了"+i+"个红包")
+        if(i<=10){
+        alert("手速不行啊")
+    }else{
+        alert("不戳哦,这手速更我有的一拼")
+    }
+    },3000)
+    setTimeout(time, 3000); 
+    </script>  
+</body>  
+</html>
